@@ -1,6 +1,8 @@
-#include <stdio.h>
+#include "functions.h"
+int main()
+{
+    auth();
+    printf("auth successful");
 
-int main() {
-    printf("Hello, World!\n");
     return 0;
 }
