@@ -1,7 +1,7 @@
 #include "functions.h"
 #include "auth.h"
 
-int auth()
+void auth()
 {
     char username[20];
     char password[20];
@@ -12,8 +12,7 @@ int auth()
         textMessages(2);
         fgets(password, 21, stdin);
         system("clear");
-    }while (verify(username, password));
-    return 1;
+    }while (!verify(username, password));
 }
 
 int verify(char* usrn, char* pasw)

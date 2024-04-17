@@ -2,6 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 
- int auth();
+ void auth();
 
-void createfile();
+void aloe(int* choice);

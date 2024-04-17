@@ -6,4 +6,5 @@ set(CMAKE_C_STANDARD 11)
 add_executable(DuroApp main.c
         auth.c
         auth.h
-        functions.h)
+        functions.h
+        mainfunc.c)

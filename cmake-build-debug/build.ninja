@@ -61,6 +61,12 @@ build CMakeFiles/DuroApp.dir/auth.c.o: C_COMPILER__DuroApp_unscanned_Debug /home
   OBJECT_DIR = CMakeFiles/DuroApp.dir
   OBJECT_FILE_DIR = CMakeFiles/DuroApp.dir
 
+build CMakeFiles/DuroApp.dir/mainfunc.c.o: C_COMPILER__DuroApp_unscanned_Debug /home/yahor/CLionProjects/Course$ project/DuroApp/mainfunc.c || cmake_object_order_depends_target_DuroApp
+  DEP_FILE = CMakeFiles/DuroApp.dir/mainfunc.c.o.d
+  FLAGS = -g -std=gnu11 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/DuroApp.dir
+  OBJECT_FILE_DIR = CMakeFiles/DuroApp.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target DuroApp
@@ -69,7 +75,7 @@ build CMakeFiles/DuroApp.dir/auth.c.o: C_COMPILER__DuroApp_unscanned_Debug /home
 #############################################
 # Link the executable DuroApp
 
-build DuroApp: C_EXECUTABLE_LINKER__DuroApp_Debug CMakeFiles/DuroApp.dir/main.c.o CMakeFiles/DuroApp.dir/auth.c.o
+build DuroApp: C_EXECUTABLE_LINKER__DuroApp_Debug CMakeFiles/DuroApp.dir/main.c.o CMakeFiles/DuroApp.dir/auth.c.o CMakeFiles/DuroApp.dir/mainfunc.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/DuroApp.dir
   POST_BUILD = :
