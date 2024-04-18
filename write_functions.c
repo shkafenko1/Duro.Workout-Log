@@ -18,28 +18,25 @@ void writeNew()
     workoutTemplate workout;
 
     inputStruct(&workout);
-    fprintf(data, "%d/%d/%d\n %d:%d\n %s, %d reps, %d lbs", workout.date[0], workout.date[1], workout.date[2], workout.time[0], workout.time[1], workout.excercises[0], workout.excerciseData[0][0], workout.excerciseData[0][1]);
+    fprintf(data, "%d/%d/%d %d:%d %s, %d reps, %d lbs", workout.date[0], workout.date[1], workout.date[2], workout.time[0], workout.time[1], workout.excercises[0], workout.excerciseData[0][0], workout.excerciseData[0][1]);
     fclose(data);
 }
 
 void inputStruct(workoutTemplate* workout)
 {
-    char date[10];
-    char time[6];
     char** excercises;
     int type;
     char* temp;
 
     system("clear");
-    do{
-        printf("Input the date of your workout in format 'DD/MM/YYYY': ");
-        scanf("%s", date);
-    } while (strlen(date) != 10);
-    sscanf(date, "%d/%d/%d", &(workout->date[0]), &(workout->date[1]), &(workout->date[2]));
 
-    printf("Input the duration of your workout in format 'HH:MM'");
-    scanf("%s", time);
-    sscanf(time, "%d:%d", &(workout->time[0]), &(workout->time[1]));
+    printf("Input the date of your workout in format 'DD MM YYYY': ");
+    for (int i = 0; i < 3; ++i)
+        scanf("%d", &(workout->date[i]));
+
+    printf("Input the duration of your workout in format 'HH MM'");
+    for (int i = 0; i < 2; ++i)
+        scanf("%d", &(workout->time[i]));
 
     for (int i = 0; i < MAX_EXCERCISES; ++i)
     {
