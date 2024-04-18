@@ -7,4 +7,5 @@ add_executable(DuroApp main.c
         auth.c
         auth.h
         functions.h
-        mainfunc.c)
+        mainfunc.c
+        struct.h)

@@ -1,0 +1,6 @@
+# ninja log v5
+0	22	1713450922162632634	build.ninja	29192abfc6453a3c
+1	69	1713449298120881368	CMakeFiles/DuroApp.dir/auth.c.o	24b74ff51d8d15ff
+0	68	1713449298116881324	CMakeFiles/DuroApp.dir/main.c.o	f0a816acab210595
+1	67	1713449298116881324	CMakeFiles/DuroApp.dir/mainfunc.c.o	3a9c79cdadb76fb7
+45	95	1713448576523596867	DuroApp	a33d4394a2783adb

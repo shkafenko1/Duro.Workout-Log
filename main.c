@@ -8,9 +8,9 @@ int main()
 
         aloe(&chooseProgramScenario);
 
-        printf("Yo bro your input was %d", chooseProgramScenario);
+        printf("Yo bro your input was %d\n", chooseProgramScenario);
 
-        /*switch (chooseProgramScenario)
+        switch (chooseProgramScenario)
         {
             case 1:
                 break;
@@ -20,7 +20,8 @@ int main()
                 break;
             default:
                 break;
-        }*/
+        }
+
     } while (1);
 
     return 0;
