@@ -5,4 +5,12 @@
 
  void auth();
 
-void aloe(int* choice);
+void getScenarioChoice(int* choice);
+
+void accessWorkouts();
+
+void recordNewWorkout();
+
+void getTips();
+
+void restart(int* choice);

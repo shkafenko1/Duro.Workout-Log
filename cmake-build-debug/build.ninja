@@ -61,8 +61,26 @@ build CMakeFiles/DuroApp.dir/auth.c.o: C_COMPILER__DuroApp_unscanned_Debug /home
   OBJECT_DIR = CMakeFiles/DuroApp.dir
   OBJECT_FILE_DIR = CMakeFiles/DuroApp.dir
 
-build CMakeFiles/DuroApp.dir/mainfunc.c.o: C_COMPILER__DuroApp_unscanned_Debug /home/yahor/CLionProjects/Course$ project/DuroApp/mainfunc.c || cmake_object_order_depends_target_DuroApp
-  DEP_FILE = CMakeFiles/DuroApp.dir/mainfunc.c.o.d
+build CMakeFiles/DuroApp.dir/settings.c.o: C_COMPILER__DuroApp_unscanned_Debug /home/yahor/CLionProjects/Course$ project/DuroApp/settings.c || cmake_object_order_depends_target_DuroApp
+  DEP_FILE = CMakeFiles/DuroApp.dir/settings.c.o.d
+  FLAGS = -g -std=gnu11 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/DuroApp.dir
+  OBJECT_FILE_DIR = CMakeFiles/DuroApp.dir
+
+build CMakeFiles/DuroApp.dir/access_functions.c.o: C_COMPILER__DuroApp_unscanned_Debug /home/yahor/CLionProjects/Course$ project/DuroApp/access_functions.c || cmake_object_order_depends_target_DuroApp
+  DEP_FILE = CMakeFiles/DuroApp.dir/access_functions.c.o.d
+  FLAGS = -g -std=gnu11 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/DuroApp.dir
+  OBJECT_FILE_DIR = CMakeFiles/DuroApp.dir
+
+build CMakeFiles/DuroApp.dir/write_functions.c.o: C_COMPILER__DuroApp_unscanned_Debug /home/yahor/CLionProjects/Course$ project/DuroApp/write_functions.c || cmake_object_order_depends_target_DuroApp
+  DEP_FILE = CMakeFiles/DuroApp.dir/write_functions.c.o.d
+  FLAGS = -g -std=gnu11 -fcolor-diagnostics
+  OBJECT_DIR = CMakeFiles/DuroApp.dir
+  OBJECT_FILE_DIR = CMakeFiles/DuroApp.dir
+
+build CMakeFiles/DuroApp.dir/tips_functions.c.o: C_COMPILER__DuroApp_unscanned_Debug /home/yahor/CLionProjects/Course$ project/DuroApp/tips_functions.c || cmake_object_order_depends_target_DuroApp
+  DEP_FILE = CMakeFiles/DuroApp.dir/tips_functions.c.o.d
   FLAGS = -g -std=gnu11 -fcolor-diagnostics
   OBJECT_DIR = CMakeFiles/DuroApp.dir
   OBJECT_FILE_DIR = CMakeFiles/DuroApp.dir
@@ -75,7 +93,7 @@ build CMakeFiles/DuroApp.dir/mainfunc.c.o: C_COMPILER__DuroApp_unscanned_Debug /
 #############################################
 # Link the executable DuroApp
 
-build DuroApp: C_EXECUTABLE_LINKER__DuroApp_Debug CMakeFiles/DuroApp.dir/main.c.o CMakeFiles/DuroApp.dir/auth.c.o CMakeFiles/DuroApp.dir/mainfunc.c.o
+build DuroApp: C_EXECUTABLE_LINKER__DuroApp_Debug CMakeFiles/DuroApp.dir/main.c.o CMakeFiles/DuroApp.dir/auth.c.o CMakeFiles/DuroApp.dir/settings.c.o CMakeFiles/DuroApp.dir/access_functions.c.o CMakeFiles/DuroApp.dir/write_functions.c.o CMakeFiles/DuroApp.dir/tips_functions.c.o
   FLAGS = -g
   OBJECT_DIR = CMakeFiles/DuroApp.dir
   POST_BUILD = :

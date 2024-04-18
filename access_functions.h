@@ -1,0 +1,8 @@
+//
+// Created by yahor on 18.4.24.
+//
+
+#ifndef DUROAPP_ACCESS_FUNCTIONS_H
+#define DUROAPP_ACCESS_FUNCTIONS_H
+
+#endif //DUROAPP_ACCESS_FUNCTIONS_H
