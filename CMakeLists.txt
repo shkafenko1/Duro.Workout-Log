@@ -8,6 +8,4 @@ add_executable(DuroApp main.c
         settings.c
         access_functions.c
         write_functions.c
-        tips_functions.c
-        write_functions.h
-        access_functions.h)
+        tips_functions.c)

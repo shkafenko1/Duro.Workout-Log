@@ -1,8 +1,9 @@
-//
-// Created by yahor on 18.4.24.
-//
+void coolprint();
 
-#ifndef DUROAPP_ACCESS_FUNCTIONS_H
-#define DUROAPP_ACCESS_FUNCTIONS_H
+void accessChoice(int* choice);
 
-#endif //DUROAPP_ACCESS_FUNCTIONS_H
+void allWorkouts();
+
+void pickByCertainExcercise();
+
+void findBest();

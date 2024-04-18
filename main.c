@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "core.h"
 int main()
 {
     int chooseProgramScenario;
@@ -22,11 +22,10 @@ int main()
             default:
                 break;
         }
-
-        if(chooseProgramScenario != 0)
-            restart(&chooseProgramScenario);
+        restart(&chooseProgramScenario);
 
     } while (chooseProgramScenario != 0);
 
+    system("clear");
     return 0;
 }

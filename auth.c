@@ -1,4 +1,4 @@
-#include "functions.h"
+#include "core.h"
 #include "auth.h"
 
 void auth()
