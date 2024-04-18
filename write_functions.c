@@ -15,17 +15,15 @@ void recordNewWorkout()
 void writeNew()
 {
     FILE* data = fopen("workout_log.txt", "w");
-    workoutTemplate inpWorkout;
+    workoutTemplate workout;
 
-    inpWorkout = inputStruct();
-    fwrite(&inpWorkout, sizeof (inpWorkout), 1, data);
-
+    inputStruct(&workout);
+    fprintf(data, "%d/%d/%d\n %d:%d\n %s, %d reps, %d lbs", workout.date[0], workout.date[1], workout.date[2], workout.time[0], workout.time[1], workout.excercises[0], workout.excerciseData[0][0], workout.excerciseData[0][1]);
     fclose(data);
 }
 
-workoutTemplate inputStruct()
+void inputStruct(workoutTemplate* workout)
 {
-    workoutTemplate workout;
     char date[10];
     char time[6];
     char** excercises;
@@ -37,11 +35,11 @@ workoutTemplate inputStruct()
         printf("Input the date of your workout in format 'DD/MM/YYYY': ");
         scanf("%s", date);
     } while (strlen(date) != 10);
-    sscanf(date, "%d.%d.%d", &workout.date[0], &workout.date[1], &workout.date[2]);
+    sscanf(date, "%d/%d/%d", &(workout->date[0]), &(workout->date[1]), &(workout->date[2]));
 
     printf("Input the duration of your workout in format 'HH:MM'");
     scanf("%s", time);
-    sscanf(time, "%d:%d", &workout.time[0], &workout.time[1]);
+    sscanf(time, "%d:%d", &(workout->time[0]), &(workout->time[1]));
 
     for (int i = 0; i < MAX_EXCERCISES; ++i)
     {
@@ -50,17 +48,14 @@ workoutTemplate inputStruct()
             break;
         excercises = getExcercises(&type);
         temp = exChoose(excercises, type);
-        strcpy(workout.excercises[i], temp);
+        strcpy(workout->excercises[i], temp);
 
         printf("Input the repetitions number: ");
-        scanf("%d", &workout.excerciseData[i][0]);
+        scanf("%d", &(workout->excerciseData[i][0]));
 
         printf("Input the weight lifted: ");
-        scanf("%d", &workout.excerciseData[i][1]);
+        scanf("%d", &(workout->excerciseData[i][1]));
     }
-
-
-    return workout;
 }
 
 char** getExcercises(int* exType)
