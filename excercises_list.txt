@@ -1,0 +1,20 @@
+Chest:
+Barbell Bench Press
+Dumbbell Bench Press
+Incline Barbell Bench Press
+Incline Dumbbell Bench Press
+Decline Barbell Bench Press
+
+Back:
+Pull-ups
+Lat Pulldown
+Barbell Rows
+Dumbbell Rows
+T-Bar Rows
+
+Legs:
+Squats
+Lunges
+Leg Press
+Leg Extensions
+Leg Curls

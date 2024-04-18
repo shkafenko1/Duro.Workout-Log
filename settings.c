@@ -30,6 +30,16 @@ void writeChoice(int* choice)
     choiceLoop(choice, 1);
 }
 
+void getType(int*choice)
+{
+    printf("Choose the excercise type: \n"
+           "1 - Chest\n"
+           "2 - Back\n"
+           "3 - Legs\n"
+           "0 - Home\n");
+    choiceLoop(choice, 3);
+}
+
 void tipsChoice(int* choice)
 {
     system("clear");
