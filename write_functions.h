@@ -6,6 +6,8 @@ void writeNew();
 
 workoutTemplate inputStruct();
 
-char** getExcercises(int exType);
+char** getExcercises(int* exType);
+
+char* exChoose(char** excercises, int num);
 
 void getType(int*choice);

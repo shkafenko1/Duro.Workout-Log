@@ -40,6 +40,8 @@ void getType(int*choice)
     choiceLoop(choice, 3);
 }
 
+
+
 void tipsChoice(int* choice)
 {
     system("clear");
@@ -48,6 +50,16 @@ void tipsChoice(int* choice)
            "3 - Legs workout\n"
            "0 - Home\n");
     choiceLoop(choice, 3);
+}
+
+char* exChoose(char** excercises, int num)
+{
+    int choice;
+    printf("Choose an exercise out of this list:\n");
+    for (int i = 0; i < num; ++i)
+        printf("%d - %s\n", i + 1, excercises[i]);
+    choiceLoop(&choice, num);
+    return excercises[choice - 1];
 }
 
 
@@ -86,5 +98,5 @@ void choiceLoop(int * choice, int limit)
 
 void coolprint()
 {
-    printf("Function accessed!\n");
+    printf("Under construction!\n");
 }

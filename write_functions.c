@@ -14,11 +14,13 @@ void recordNewWorkout()
 
 void writeNew()
 {
+    FILE* data = fopen("workout_log.txt", "w");
     workoutTemplate inpWorkout;
 
     inpWorkout = inputStruct();
+    fwrite(&inpWorkout, sizeof (inpWorkout), 1, data);
 
-
+    fclose(data);
 }
 
 workoutTemplate inputStruct()
@@ -28,6 +30,7 @@ workoutTemplate inputStruct()
     char time[6];
     char** excercises;
     int type;
+    char* temp;
 
     system("clear");
     do{
@@ -40,22 +43,62 @@ workoutTemplate inputStruct()
     scanf("%s", time);
     sscanf(time, "%d:%d", &workout.time[0], &workout.time[1]);
 
-    getType(&type);
-    excercises = getExcercises();
+    for (int i = 0; i < MAX_EXCERCISES; ++i)
+    {
+        getType(&type);
+        if (type == 0)
+            break;
+        excercises = getExcercises(&type);
+        temp = exChoose(excercises, type);
+        strcpy(workout.excercises[i], temp);
+
+        printf("Input the repetitions number: ");
+        scanf("%d", &workout.excerciseData[i][0]);
+
+        printf("Input the weight lifted: ");
+        scanf("%d", &workout.excerciseData[i][1]);
+    }
 
 
     return workout;
 }
 
-char** getExcercises(int exType)
+char** getExcercises(int* exType)
 {
     FILE* list = fopen("excercises_list.txt", "r");
-    char excercises[MAX_EXCERCISES][STRING_LENGTH];
+    char** excercises = (char**) malloc(MAX_EXCERCISES * sizeof(char*));
+    for (int i = 0; i < MAX_EXCERCISES; ++i)
+        *(excercises + i) = (char*) malloc(STRING_LENGTH * sizeof(char));
+
     char buffer[STRING_LENGTH];
+    char* types[] = {"Chest", "Back", "Legs"};
+    int count = 0;
     int isType = 0;
 
-    while (fgets(buffer, STRING_LENGTH, list) != NULL);
-
+    while (fgets(buffer, STRING_LENGTH, list) != NULL)
+    {
+        if (buffer[0] == '\n')
+        {
+            isType = 0;
+            continue;
+        }
+        if (buffer[strlen(buffer) - 1] == '\n')
+            buffer[strlen(buffer) - 1] = '\0';
+        if (!isType)
+        {
+            if (strcmp(buffer, types[*exType - 1]) == 0)
+            {
+                isType = 1;
+                continue;
+            }
+        }
+        else
+        {
+            strncpy(excercises[count], buffer, STRING_LENGTH - 1);
+            count++;
+        }
+    }
     fclose(list);
+    *exType = count;
     return excercises;
 }
