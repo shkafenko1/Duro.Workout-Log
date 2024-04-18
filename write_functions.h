@@ -4,7 +4,7 @@ void writeChoice(int* choice);
 
 void writeNew();
 
-void inputStruct(workoutTemplate* workout);
+void inputStruct(workoutTemplate* workout, int* num);
 
 char** getExcercises(int* exType);
 

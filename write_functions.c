@@ -14,15 +14,20 @@ void recordNewWorkout()
 
 void writeNew()
 {
-    FILE* data = fopen("workout_log.txt", "w");
+    FILE* data = fopen("workout_log.txt", "a");
     workoutTemplate workout;
+    int counter;
 
-    inputStruct(&workout);
-    fprintf(data, "%d/%d/%d %d:%d %s, %d reps, %d lbs", workout.date[0], workout.date[1], workout.date[2], workout.time[0], workout.time[1], workout.excercises[0], workout.excerciseData[0][0], workout.excerciseData[0][1]);
+    inputStruct(&workout, &counter);
+
+    fprintf(data, "\n%d/%d/%d %d:%d", workout.date[0], workout.date[1], workout.date[2], workout.time[0], workout.time[1]);
+    for (int i = 0; i < counter; ++i)
+        fprintf(data, " %s, %d reps, %d kgs", workout.excercises[i], workout.excerciseData[i][0], workout.excerciseData[i][1]);
+
     fclose(data);
 }
 
-void inputStruct(workoutTemplate* workout)
+void inputStruct(workoutTemplate* workout, int* num)
 {
     char** excercises;
     int type;
@@ -52,6 +57,7 @@ void inputStruct(workoutTemplate* workout)
 
         printf("Input the weight lifted: ");
         scanf("%d", &(workout->excerciseData[i][1]));
+        (*num)++;
     }
 }
 
