@@ -32,6 +32,7 @@ void inputStruct(workoutTemplate* workout, int* num)
     char** excercises;
     int type;
     char* temp;
+    int tempInt = 0;
 
     system("clear");
 
@@ -57,8 +58,9 @@ void inputStruct(workoutTemplate* workout, int* num)
 
         printf("Input the weight lifted: ");
         scanf("%d", &(workout->excerciseData[i][1]));
-        (*num)++;
+        tempInt++;
     }
+    *num = tempInt;
 }
 
 char** getExcercises(int* exType)
