@@ -35,6 +35,7 @@ void checkTraining()
     Training temp;
 
     FILE *file = fopen("training.txt", "r");
+
     if (!file) {
         perror("Не удалось открыть файл");
         return;
@@ -71,13 +72,13 @@ void trainings_toggle(Training* workouts, int count)
             char date[11];
             scanf("%10s", date);
             printf("\n");
-            read_trainings_by_date(date);
+            read_trainings_by_date(date, workouts, count);
             break;
         }
         case 3:
         {
             int group_choice, exercise_choice;
-            const char *exercise_names[3][5] = {
+            char *exercise_names[3][5] = {
                     {"Приседания","Жим ногами лежа", "Становая тяга", "Болгарские приседания", "Выпады"},
                     {"Отжимания", "Жим штанги лёжа", "Жим гантелей",    "Хаммер", "Кроссовер"},
                     {"Подтягивания", "Тяга блока","Гребля","Тяга штанги к поясу", "Пулловер"}
@@ -110,7 +111,7 @@ void trainings_toggle(Training* workouts, int count)
             }
 
             char *selected_exercise = exercise_names[group_choice - 1][exercise_choice - 1];
-            read_trainings_by_exercise(selected_exercise);
+            read_trainings_by_exercise(selected_exercise, workouts, count);
             break;
         }
         default:
@@ -119,143 +120,29 @@ void trainings_toggle(Training* workouts, int count)
     }
 }
 
-/*void read_trainings_by_date(const char *date)
+void read_trainings_by_date(const char *date, Training *workouts, int count)
 {
-    FILE *file = fopen("training.txt", "r");
-    if (!file)
+    for (int i = 0; i < count; ++i)
     {
-        perror("Не удалось открыть файл");
-        return;
-    }
-
-    char line[256];
-    int match = 0; // Флаг для вывода тренировки
-
-    while (fgets(line, sizeof(line), file))
-    {
-        if (strncmp(line, "Дата: ", 6) == 0)
+        if(!strcmp(workouts[i].date, date))
         {
-            if (strstr(line, date))
-            {
-                match = 1;
-            } else {
-                match = 0;
-            }
-        }
-        if (match)
-        {
-            printf("%s", line);
+            output(workouts[i]);
         }
     }
-
-    fclose(file);
 }
 
-void read_trainings_by_exercise(const char *exercise)
+void read_trainings_by_exercise(const char *exercise, Training *workouts, int count)
 {
-    FILE *file = fopen("training.txt", "r");
-    if (!file)
+    const char *exercise_names[3][5] = {
+            {"Приседания","Жим ногами лежа", "Становая тяга", "Болгарские приседания", "Выпады"},
+            {"Отжимания", "Жим штанги лёжа", "Жим гантелей",    "Хаммер", "Кроссовер"},
+            {"Подтягивания", "Тяга блока","Гребля","Тяга штанги к поясу", "Пулловер"}
+    };
+    for (int i = 0; i < count; ++i)
     {
-        perror("Не удалось открыть файл");
-        return;
-    }
-
-    char line[80];
-    int match = 0; // Флаг для вывода тренировки
-
-    while (fgets(line, sizeof(line), file))
-    {
-        if (strncmp(line, "Упражнение: ", 12) == 0)
+        if(!strcmp(exercise_names[workouts[i].exercise_index[0]][workouts[i].exercise_index[1]], exercise))
         {
-            if (strstr(line, exercise))
-            {
-                fseek(file, -3*(long) strlen(line), SEEK_CUR);
-                for (int i = 0; i < 6; ++i)
-                {
-                    fgets(line, sizeof(line), file);
-                    printf("%s", line);
-                }
-                break;
-*/
-/*                match = 1;
-            } else
-            {
-                match = 0;*//*
-
-            }
+            output(workouts[i]);
         }
-*/
-/*        if (match)
-        {
-            printf("%s", line);
-        }*//*
-
     }
-
-    fclose(file);
 }
-
-void checkTraining()
-{
-    int choice;
-
-    scanf("%d", &choice);
-    switch (choice)
-    {
-        case 1:
-            read_all_trainings();
-            break;
-        case 2:
-        {
-            printf("Введите дату тренировки (YYYY-MM-DD): ");
-            char date[11];
-            scanf("%10s", date);
-            printf("\n");
-            read_trainings_by_date(date);
-            break;
-        }
-        case 3:
-        {
-            int group_choice, exercise_choice;
-            char *exercises[GROUPS][EXERCISES_PER_GROUP] =
-                    {
-                    {"Приседания","Жим ногами лежа", "Становая тяга", "Болгарские приседания", "Выпады"},
-                    {"Отжимания", "Жим штанги лёжа", "Жим гантелей",    "Хаммер", "Кроссовер"},
-                    {"Подтягивания", "Тяга блока","Гребля","Тяга штанги к поясу", "Пулловер"}
-            };
-
-            printf("Выберите группу упражнений (1-3):\n1. Ноги\n2. Грудь\n3. Спина\n");
-            scanf("%d", &group_choice);
-
-            if (group_choice < 1 || group_choice > GROUPS)
-            {
-                printf("Неверный выбор группы упражнений.\n");
-                return;
-            }
-
-            printf("Выберите упражнение (1-%d):\n", EXERCISES_PER_GROUP);
-            for (int i = 0; i < EXERCISES_PER_GROUP; i++)
-            {
-                if (strlen(exercises[group_choice - 1][i]) > 0)
-                {
-                    printf("%d. %s\n", i + 1, exercises[group_choice - 1][i]);
-                }
-            }
-            scanf("%d", &exercise_choice);
-
-            if (exercise_choice < 1 || exercise_choice > EXERCISES_PER_GROUP ||
-                strlen(exercises[group_choice - 1][exercise_choice - 1]) == 0)
-            {
-                printf("Неверный выбор упражнения.\n");
-                return;
-            }
-
-            char *selected_exercise = exercises[group_choice - 1][exercise_choice - 1];
-            read_trainings_by_exercise(selected_exercise);
-            break;
-        }
-        default:
-            printf("Неверный выбор.\n");
-            break;
-    }
-}*/
