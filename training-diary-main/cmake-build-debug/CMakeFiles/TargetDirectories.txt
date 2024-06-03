@@ -1,0 +1,3 @@
+D:/Course App/training-diary-main/cmake-build-debug/CMakeFiles/training_diary.dir
+D:/Course App/training-diary-main/cmake-build-debug/CMakeFiles/edit_cache.dir
+D:/Course App/training-diary-main/cmake-build-debug/CMakeFiles/rebuild_cache.dir

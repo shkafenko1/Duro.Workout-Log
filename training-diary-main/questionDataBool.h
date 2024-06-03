@@ -1,0 +1,4 @@
+#ifndef TRAINING_DIARY_QUESTIONDATABOOL_H
+#define TRAINING_DIARY_QUESTIONDATABOOL_H
+void questionData();
+#endif

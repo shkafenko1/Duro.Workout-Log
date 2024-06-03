@@ -1,0 +1,3 @@
+"D:\Proggies 2\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\training_diary.dir/objects.a
+C:\Users\Yahor\MinGW\bin\ar.exe qc CMakeFiles\training_diary.dir/objects.a @CMakeFiles\training_diary.dir\objects1.rsp
+C:\Users\Yahor\MinGW\bin\gcc.exe -g -Wl,--whole-archive CMakeFiles\training_diary.dir/objects.a -Wl,--no-whole-archive -o training_diary.exe -Wl,--out-implib,libtraining_diary.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\training_diary.dir\linkLibs.rsp

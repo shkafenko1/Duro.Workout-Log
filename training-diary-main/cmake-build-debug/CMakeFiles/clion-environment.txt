@@ -1,0 +1,5 @@
+ToolSet: 5.0 (local)@C:\Users\Yahor\MinGW
+Ninja: 1.11.1@D:\Proggies 2\CLion 2023.2.2\bin\ninja\win\x64\ninja.exe
+Options: 
+
+Options:
