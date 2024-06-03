@@ -62,7 +62,7 @@ void trainings_toggle(Training* workouts, int count)
     switch (toggle)
     {
         case 1:
-            read_all_trainings();
+            read_all_trainings(workouts, count);
             break;
         case 2:
         {
