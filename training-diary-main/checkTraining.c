@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "checkTraining.h"
 
 #define MAX_EXERCISES 15
@@ -76,11 +77,10 @@ void trainings_toggle(Training* workouts, int count)
         case 3:
         {
             int group_choice, exercise_choice;
-            char *exercises[GROUPS][EXERCISES_PER_GROUP] =
-                    {
-                            {"Приседания","Жим ногами лежа", "Становая тяга", "Болгарские приседания", "Выпады"},
-                            {"Отжимания", "Жим штанги лёжа", "Жим гантелей",    "Хаммер", "Кроссовер"},
-                            {"Подтягивания", "Тяга блока","Гребля","Тяга штанги к поясу", "Пулловер"}
+            const char *exercise_names[3][5] = {
+                    {"Приседания","Жим ногами лежа", "Становая тяга", "Болгарские приседания", "Выпады"},
+                    {"Отжимания", "Жим штанги лёжа", "Жим гантелей",    "Хаммер", "Кроссовер"},
+                    {"Подтягивания", "Тяга блока","Гребля","Тяга штанги к поясу", "Пулловер"}
                     };
 
             printf("Выберите группу упражнений (1-3):\n1. Ноги\n2. Грудь\n3. Спина\n");
@@ -95,21 +95,21 @@ void trainings_toggle(Training* workouts, int count)
             printf("Выберите упражнение (1-%d):\n", EXERCISES_PER_GROUP);
             for (int i = 0; i < EXERCISES_PER_GROUP; i++)
             {
-                if (strlen(exercises[group_choice - 1][i]) > 0)
+                if (strlen(exercise_names[group_choice - 1][i]) > 0)
                 {
-                    printf("%d. %s\n", i + 1, exercises[group_choice - 1][i]);
+                    printf("%d. %s\n", i + 1, exercise_names[group_choice - 1][i]);
                 }
             }
             scanf("%d", &exercise_choice);
 
             if (exercise_choice < 1 || exercise_choice > EXERCISES_PER_GROUP ||
-                strlen(exercises[group_choice - 1][exercise_choice - 1]) == 0)
+                strlen(exercise_names[group_choice - 1][exercise_choice - 1]) == 0)
             {
                 printf("Неверный выбор упражнения.\n");
                 return;
             }
 
-            char *selected_exercise = exercises[group_choice - 1][exercise_choice - 1];
+            char *selected_exercise = exercise_names[group_choice - 1][exercise_choice - 1];
             read_trainings_by_exercise(selected_exercise);
             break;
         }
