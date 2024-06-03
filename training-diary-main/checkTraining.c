@@ -7,25 +7,27 @@
 #define GROUPS 3
 #define EXERCISES_PER_GROUP (MAX_EXERCISES / GROUPS)
 
-void output(Training workout)
+void output(Training workout, FILE *outpt)
 {
     const char *exercise_names[3][5] = {
             {"Приседания","Жим ногами лежа", "Становая тяга", "Болгарские приседания", "Выпады"},
             {"Отжимания", "Жим штанги лёжа", "Жим гантелей",    "Хаммер", "Кроссовер"},
             {"Подтягивания", "Тяга блока","Гребля","Тяга штанги к поясу", "Пулловер"}
     };
-    printf("Дата: %s\n "
-           "Длительность тренировки: %d\n "
-           "Упражнение: %s\n "
-           "Повторения: %d\n "
-           "Использованный вес: %.1f\n", workout.date, workout.duration, exercise_names[workout.exercise_index[0]][workout.exercise_index[1]], workout.repetitions, workout.weight);
-    printf("----------------\n");
+    fprintf(outpt, "Дата: %s\n"
+           "Длительность тренировки: %d\n"
+           "Упражнение: %s\n"
+           "Повторения: %d\n"
+           "Использованный вес: %.1f\n"
+           "----------------\n", workout.date, workout.duration, exercise_names[workout.exercise_index[0]][workout.exercise_index[1]], workout.repetitions, workout.weight);
 }
 
 void read_all_trainings(Training* workouts, int count)
 {
+    FILE *outpt = fopen("output.txt", "a");
     for (int i = 0; i < count; ++i)
-        output(workouts[i]);
+        output(workouts[i], outpt);
+    fclose(outpt);
 }
 
 void checkTraining()
@@ -35,7 +37,8 @@ void checkTraining()
     Training temp;
 
     FILE *file = fopen("training.txt", "r");
-
+    FILE *outpt = fopen("output.txt", "w"); // Очистка файла вывода
+    fclose(outpt);
     if (!file) {
         perror("Не удалось открыть файл");
         return;
@@ -54,6 +57,30 @@ void checkTraining()
     fclose(file);
 
     trainings_toggle(workouts, count);
+}
+
+void print()
+{
+    int toggle;
+    FILE *outpt = NULL;
+    printf("Выберите тип вывода: \n1 - Вывести данные на экран \n2 - Открыть текстовый файл\n");
+    scanf("%d", &toggle);
+    switch (toggle)
+    {
+        case 1:
+            outpt = fopen("output.txt", "r");
+            char line[80];
+            system("cls");
+            while (fgets(line, 80, outpt))
+                printf("%s", line);
+            break;
+        case 2:
+            system("notepad.exe output.txt");
+            system("cls");
+            break;
+        default:
+            break;
+    }
 }
 
 void trainings_toggle(Training* workouts, int count)
@@ -118,21 +145,25 @@ void trainings_toggle(Training* workouts, int count)
             printf("Неверный выбор.\n");
             break;
     }
+    print();
 }
 
 void read_trainings_by_date(const char *date, Training *workouts, int count)
 {
+    FILE *outpt = fopen("output.txt", "a");
     for (int i = 0; i < count; ++i)
     {
         if(!strcmp(workouts[i].date, date))
         {
-            output(workouts[i]);
+            output(workouts[i], outpt);
         }
     }
+    fclose(outpt);
 }
 
 void read_trainings_by_exercise(const char *exercise, Training *workouts, int count)
 {
+    FILE *outpt = fopen("output.txt", "a");
     const char *exercise_names[3][5] = {
             {"Приседания","Жим ногами лежа", "Становая тяга", "Болгарские приседания", "Выпады"},
             {"Отжимания", "Жим штанги лёжа", "Жим гантелей",    "Хаммер", "Кроссовер"},
@@ -142,7 +173,8 @@ void read_trainings_by_exercise(const char *exercise, Training *workouts, int co
     {
         if(!strcmp(exercise_names[workouts[i].exercise_index[0]][workouts[i].exercise_index[1]], exercise))
         {
-            output(workouts[i]);
+            output(workouts[i], outpt);
         }
     }
+    fclose(outpt);
 }

@@ -24,8 +24,11 @@ CMakeFiles/training_diary.dir/checkTraining.c.obj: D:/Course\ App/training-diary
   C:/Users/Yahor/MinGW/include/sdkddkver.h \
   C:/Users/Yahor/MinGW/include/stdio.h \
   C:/Users/Yahor/MinGW/include/stdlib.h \
+  C:/Users/Yahor/MinGW/include/string.h \
+  C:/Users/Yahor/MinGW/include/strings.h \
   C:/Users/Yahor/MinGW/include/sys/types.h \
   C:/Users/Yahor/MinGW/include/w32api.h \
+  C:/Users/Yahor/MinGW/include/wchar.h \
   C:/Users/Yahor/MinGW/lib/gcc/mingw32/6.3.0/include/stdarg.h \
   C:/Users/Yahor/MinGW/lib/gcc/mingw32/6.3.0/include/stddef.h
 

@@ -9,5 +9,8 @@ CMakeFiles/training_diary.dir/checkTraining.c.obj: \
  c:\users\yahor\mingw\include\sys/types.h \
  c:\users\yahor\mingw\lib\gcc\mingw32\6.3.0\include\stdarg.h \
  c:\users\yahor\mingw\include\stdlib.h \
+ c:\users\yahor\mingw\include\string.h \
+ c:\users\yahor\mingw\include\strings.h \
+ c:\users\yahor\mingw\include\wchar.h \
  D:\Course\ App\training-diary-main\checkTraining.h \
  D:\Course\ App\training-diary-main\struct.h
