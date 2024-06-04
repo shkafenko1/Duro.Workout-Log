@@ -7,6 +7,4 @@ typedef struct {
     int repetitions; // Количество повторений
     float weight; // Вес, который использовался
 } Training;
-
-extern char *excercise_names[3][5];
 #endif

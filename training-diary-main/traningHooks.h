@@ -3,4 +3,5 @@
 void createTraning();
 void reportTraining();
 void adviceTraning();
+void removeTraining();
 #endif

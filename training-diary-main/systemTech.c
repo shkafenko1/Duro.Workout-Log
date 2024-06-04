@@ -2,8 +2,6 @@
 #include <windows.h>
 
 void setBackgorundColor() { // Выбор цвета текста консоли
-    /*HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    SetConsoleTextAttribute(hConsole, 7, B);*/
     system("color F0");
 }
 

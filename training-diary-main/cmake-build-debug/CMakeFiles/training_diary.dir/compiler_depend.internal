@@ -77,6 +77,22 @@ CMakeFiles/training_diary.dir/questionDataBool.c.obj
  C:/Users/Yahor/MinGW/lib/gcc/mingw32/6.3.0/include/stdarg.h
  C:/Users/Yahor/MinGW/lib/gcc/mingw32/6.3.0/include/stddef.h
 
+CMakeFiles/training_diary.dir/removeTraining.c.obj
+ D:/Course App/training-diary-main/removeTraining.c
+ D:/Course App/training-diary-main/removeTraining.h
+ C:/Users/Yahor/MinGW/include/_mingw.h
+ C:/Users/Yahor/MinGW/include/msvcrtver.h
+ C:/Users/Yahor/MinGW/include/sdkddkver.h
+ C:/Users/Yahor/MinGW/include/stdio.h
+ C:/Users/Yahor/MinGW/include/stdlib.h
+ C:/Users/Yahor/MinGW/include/string.h
+ C:/Users/Yahor/MinGW/include/strings.h
+ C:/Users/Yahor/MinGW/include/sys/types.h
+ C:/Users/Yahor/MinGW/include/w32api.h
+ C:/Users/Yahor/MinGW/include/wchar.h
+ C:/Users/Yahor/MinGW/lib/gcc/mingw32/6.3.0/include/stdarg.h
+ C:/Users/Yahor/MinGW/lib/gcc/mingw32/6.3.0/include/stddef.h
+
 CMakeFiles/training_diary.dir/systemTech.c.obj
  D:/Course App/training-diary-main/systemTech.c
  D:/Course App/training-diary-main/systemTech.h
@@ -152,6 +168,7 @@ CMakeFiles/training_diary.dir/traningHooks.c.obj
  D:/Course App/training-diary-main/adviceTraining.h
  D:/Course App/training-diary-main/checkTraining.h
  D:/Course App/training-diary-main/createTraning.h
+ D:/Course App/training-diary-main/removeTraining.h
  D:/Course App/training-diary-main/struct.h
  D:/Course App/training-diary-main/systemTech.h
  D:/Course App/training-diary-main/traningHooks.h

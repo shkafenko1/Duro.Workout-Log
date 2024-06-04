@@ -7,7 +7,7 @@
 #define GROUPS 3
 #define EXERCISES_PER_GROUP (MAX_EXERCISES / GROUPS)
 
-void output(Training workout, FILE *outpt)
+void output(Training workout, FILE *outpt) // Функция записывает вывод в текстовый файл
 {
     const char *exercise_names[3][5] = {
             {"Приседания","Жим ногами лежа", "Становая тяга", "Болгарские приседания", "Выпады"},
@@ -15,14 +15,14 @@ void output(Training workout, FILE *outpt)
             {"Подтягивания", "Тяга блока","Гребля","Тяга штанги к поясу", "Пулловер"}
     };
     fprintf(outpt, "Дата: %s\n"
-           "Длительность тренировки: %d\n"
-           "Упражнение: %s\n"
-           "Повторения: %d\n"
-           "Использованный вес: %.1f\n"
-           "----------------\n", workout.date, workout.duration, exercise_names[workout.exercise_index[0]][workout.exercise_index[1]], workout.repetitions, workout.weight);
+                   "Длительность тренировки: %d\n"
+                   "Упражнение: %s\n"
+                   "Повторения: %d\n"
+                   "Использованный вес: %.1f\n"
+                   "----------------\n", workout.date, workout.duration, exercise_names[workout.exercise_index[0]][workout.exercise_index[1]], workout.repetitions, workout.weight);
 }
 
-void read_all_trainings(Training* workouts, int count)
+void read_all_trainings(Training* workouts, int count) // Функция вызывает вывод всех тренировок
 {
     FILE *outpt = fopen("output.txt", "a");
     for (int i = 0; i < count; ++i)
@@ -30,7 +30,7 @@ void read_all_trainings(Training* workouts, int count)
     fclose(outpt);
 }
 
-void checkTraining()
+void checkTraining() // Главная функция, считывает данные для вывода из текстового файла в массив структур
 {
     Training *workouts = malloc(1*sizeof(Training));
     int count = 0;
@@ -59,7 +59,15 @@ void checkTraining()
     trainings_toggle(workouts, count);
 }
 
-void print()
+int fileIsEmpty() // Функция проверяет файл на наличие в нём данных
+{
+    FILE* file = fopen("output.txt", "r");
+
+    fseek(file, 0, SEEK_END);
+    return ftell(file) == 0 ? 1 : 0; // Функция возвращает 1, если файл пуст и 0, если не пуст
+}
+
+void print() // Функция выводит данные на экран или открывает текстовый файл с выводом
 {
     int toggle;
     FILE *outpt = NULL;
@@ -75,7 +83,7 @@ void print()
                 printf("%s", line);
             break;
         case 2:
-            system("notepad.exe output.txt");
+            system("notepad.exe output.txt"); // Открытие файла с выводом через стандартное приложение "блокнот"
             system("cls");
             break;
         default:
@@ -83,17 +91,17 @@ void print()
     }
 }
 
-void trainings_toggle(Training* workouts, int count)
+void trainings_toggle(Training* workouts, int count) // Выбор вывода
 {
     int toggle;
     printf("Выберите тип вывода тренировок:\n1-Вывод всех тренировок\n2-Вывод тренировок по дате\n3-Вывод тренировок по упражнению\n");
     scanf("%d", &toggle);
     switch (toggle)
     {
-        case 1:
+        case 1: // Вывод всех тренировок
             read_all_trainings(workouts, count);
             break;
-        case 2:
+        case 2: // Поиск тренировок по дате
         {
             printf("Введите дату тренировки (YYYY-MM-DD): ");
             char date[11];
@@ -102,14 +110,14 @@ void trainings_toggle(Training* workouts, int count)
             read_trainings_by_date(date, workouts, count);
             break;
         }
-        case 3:
+        case 3: // Поиск тренировок по упражнению
         {
             int group_choice, exercise_choice;
             char *exercise_names[3][5] = {
                     {"Приседания","Жим ногами лежа", "Становая тяга", "Болгарские приседания", "Выпады"},
                     {"Отжимания", "Жим штанги лёжа", "Жим гантелей",    "Хаммер", "Кроссовер"},
                     {"Подтягивания", "Тяга блока","Гребля","Тяга штанги к поясу", "Пулловер"}
-                    };
+            };
 
             printf("Выберите группу упражнений (1-3):\n1. Ноги\n2. Грудь\n3. Спина\n");
             scanf("%d", &group_choice);
@@ -145,10 +153,13 @@ void trainings_toggle(Training* workouts, int count)
             printf("Неверный выбор.\n");
             break;
     }
-    print();
+    if(!fileIsEmpty())
+        print();
+    else
+        printf("Данные не найдены!\n");
 }
 
-void read_trainings_by_date(const char *date, Training *workouts, int count)
+void read_trainings_by_date(const char *date, Training *workouts, int count) //Функция вызывает вывод тренировок за опр. дату
 {
     FILE *outpt = fopen("output.txt", "a");
     for (int i = 0; i < count; ++i)
@@ -161,7 +172,7 @@ void read_trainings_by_date(const char *date, Training *workouts, int count)
     fclose(outpt);
 }
 
-void read_trainings_by_exercise(const char *exercise, Training *workouts, int count)
+void read_trainings_by_exercise(const char *exercise, Training *workouts, int count) // Функция выводит тренировки с определённым упражнением
 {
     FILE *outpt = fopen("output.txt", "a");
     const char *exercise_names[3][5] = {

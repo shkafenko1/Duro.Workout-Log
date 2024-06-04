@@ -11,6 +11,7 @@ int main(){
     do {
 
         questionData(); // Переход к выбору функционала программы
+        rewind(stdin);
         printf("\nЖелаете продолжить? (1: Да, 0: Нет): ");
         scanf("%d", &choice);
         ClearConsole();

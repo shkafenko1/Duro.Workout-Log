@@ -72,6 +72,21 @@ CMakeFiles/training_diary.dir/questionDataBool.c.obj: D:/Course\ App/training-di
   C:/Users/Yahor/MinGW/lib/gcc/mingw32/6.3.0/include/stdarg.h \
   C:/Users/Yahor/MinGW/lib/gcc/mingw32/6.3.0/include/stddef.h
 
+CMakeFiles/training_diary.dir/removeTraining.c.obj: D:/Course\ App/training-diary-main/removeTraining.c \
+  D:/Course\ App/training-diary-main/removeTraining.h \
+  C:/Users/Yahor/MinGW/include/_mingw.h \
+  C:/Users/Yahor/MinGW/include/msvcrtver.h \
+  C:/Users/Yahor/MinGW/include/sdkddkver.h \
+  C:/Users/Yahor/MinGW/include/stdio.h \
+  C:/Users/Yahor/MinGW/include/stdlib.h \
+  C:/Users/Yahor/MinGW/include/string.h \
+  C:/Users/Yahor/MinGW/include/strings.h \
+  C:/Users/Yahor/MinGW/include/sys/types.h \
+  C:/Users/Yahor/MinGW/include/w32api.h \
+  C:/Users/Yahor/MinGW/include/wchar.h \
+  C:/Users/Yahor/MinGW/lib/gcc/mingw32/6.3.0/include/stdarg.h \
+  C:/Users/Yahor/MinGW/lib/gcc/mingw32/6.3.0/include/stddef.h
+
 CMakeFiles/training_diary.dir/systemTech.c.obj: D:/Course\ App/training-diary-main/systemTech.c \
   D:/Course\ App/training-diary-main/systemTech.h \
   C:/Users/Yahor/MinGW/include/_mingw.h \
@@ -145,6 +160,7 @@ CMakeFiles/training_diary.dir/traningHooks.c.obj: D:/Course\ App/training-diary-
   D:/Course\ App/training-diary-main/adviceTraining.h \
   D:/Course\ App/training-diary-main/checkTraining.h \
   D:/Course\ App/training-diary-main/createTraning.h \
+  D:/Course\ App/training-diary-main/removeTraining.h \
   D:/Course\ App/training-diary-main/struct.h \
   D:/Course\ App/training-diary-main/systemTech.h \
   D:/Course\ App/training-diary-main/traningHooks.h \
@@ -202,15 +218,13 @@ C:/Users/Yahor/MinGW/include/commdlg.h:
 
 C:/Users/Yahor/MinGW/include/oleidl.h:
 
-C:/Users/Yahor/MinGW/include/winbase.h:
-
-C:/Users/Yahor/MinGW/include/prsht.h:
-
-C:/Users/Yahor/MinGW/include/unknwn.h:
-
 D:/Course\ App/training-diary-main/checkTraining.c:
 
 C:/Users/Yahor/MinGW/include/sys/time.h:
+
+C:/Users/Yahor/MinGW/include/unknwn.h:
+
+C:/Users/Yahor/MinGW/include/prsht.h:
 
 D:/Course\ App/training-diary-main/createTraning.h:
 
@@ -242,6 +256,12 @@ D:/Course\ App/training-diary-main/systemTech.h:
 
 D:/Course\ App/training-diary-main/questionDataBool.c:
 
+D:/Course\ App/training-diary-main/removeTraining.c:
+
+C:/Users/Yahor/MinGW/include/lzexpand.h:
+
+D:/Course\ App/training-diary-main/removeTraining.h:
+
 D:/Course\ App/training-diary-main/systemTech.c:
 
 C:/Users/Yahor/MinGW/include/_winsock.h:
@@ -268,8 +288,6 @@ C:/Users/Yahor/MinGW/include/shellapi.h:
 
 C:/Users/Yahor/MinGW/include/dlgs.h:
 
-C:/Users/Yahor/MinGW/include/lzexpand.h:
-
 C:/Users/Yahor/MinGW/include/rpcdcep.h:
 
 C:/Users/Yahor/MinGW/include/mmsystem.h:
@@ -289,6 +307,8 @@ C:/Users/Yahor/MinGW/include/rpc.h:
 C:/Users/Yahor/MinGW/include/rpcdce.h:
 
 C:/Users/Yahor/MinGW/include/rpcnsi.h:
+
+C:/Users/Yahor/MinGW/include/winbase.h:
 
 C:/Users/Yahor/MinGW/include/wincon.h:
 

@@ -103,6 +103,12 @@
 		<Unit filename="D:/Course App/training-diary-main/questionDataBool.h">
 			<Option target="training_diary"/>
 		</Unit>
+		<Unit filename="D:/Course App/training-diary-main/removeTraining.c">
+			<Option target="training_diary"/>
+		</Unit>
+		<Unit filename="D:/Course App/training-diary-main/removeTraining.h">
+			<Option target="training_diary"/>
+		</Unit>
 		<Unit filename="D:/Course App/training-diary-main/struct.h">
 			<Option target="training_diary"/>
 		</Unit>

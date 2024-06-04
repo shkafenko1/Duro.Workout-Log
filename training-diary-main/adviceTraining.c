@@ -4,10 +4,10 @@
 #include <string.h>
 
 #define GROUPS 3
-#define MAX_ADVICE_LENGTH 256
+#define MAX_ADVICE_LENGTH 500
 
 typedef struct {
-    char group_name[50];
+    char group_name[15];
     char advice[MAX_ADVICE_LENGTH];
 } Advice;
 
@@ -19,13 +19,13 @@ Advice *generate_advice_list() {
     }
 
     strcpy(advice_list[0].group_name, "Ноги");
-    strcpy(advice_list[0].advice, "Совет для тренировки ног: всегда следите за техникой выполнения, чтобы избежать травм.");
+    strcpy(advice_list[0].advice, "Для эффективной тренировки нижней части тела рекомендуется уделять регулярное внимание ключевым мышечным группам, таким как квадрицепсы, ягодичные мышцы и мышцы задней поверхности бедра.");
 
-    strcpy(advice_list[1].group_name, "Руки");
-    strcpy(advice_list[1].advice, "Совет для тренировки рук: не забывайте про разминку перед началом основной тренировки.");
+    strcpy(advice_list[1].group_name, "Грудь");
+    strcpy(advice_list[1].advice, "Для эффективной тренировки верхней части тела рекомендуется уделять регулярное внимание ключевым мышечным группам, таким как большая грудная мышца, малая грудная мышца и передняя зубчатая мышца.");
 
     strcpy(advice_list[2].group_name, "Спина");
-    strcpy(advice_list[2].advice, "Совет для тренировки спины: уделяйте внимание правильному положению позвоночника.");
+    strcpy(advice_list[2].advice, "Для эффективной тренировки мышц спины рекомендуется уделять регулярное внимание ключевым мышечным группам, таким как широчайшие мышцы спины, трапециевидные мышцы и ромбовидные мышцы.");
 
     return advice_list;
 }
@@ -34,10 +34,10 @@ Advice *generate_advice_list() {
 void generate_advice() {
     Advice *advice_list = generate_advice_list();
     int group_choice;
-    printf("Введите для какой группы мышц вы хотите получить совет?:\n1-Ноги\n2-Руки\n3-Спина");
+    printf("Введите для какой группы мышц вы хотите получить совет?:\n1-Ноги\n2-Грудь\n3-Спина\n");
     scanf("%d", &group_choice);
     if (group_choice > 0 && group_choice <= GROUPS) {
-        printf("Совет для группы '%s': %s\n", advice_list[group_choice - 1].group_name, advice_list[group_choice - 1].advice);
+        printf("Совет для группы '%s': \n%s\n", advice_list[group_choice - 1].group_name, advice_list[group_choice - 1].advice);
     } else {
         printf("Неверный выбор группы упражнений.\n");
     }
