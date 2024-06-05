@@ -248,6 +248,30 @@ questionDataBool.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\training_diary.dir\build.make CMakeFiles/training_diary.dir/questionDataBool.c.s
 .PHONY : questionDataBool.c.s
 
+removeTraining.obj: removeTraining.c.obj
+.PHONY : removeTraining.obj
+
+# target to build an object file
+removeTraining.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\training_diary.dir\build.make CMakeFiles/training_diary.dir/removeTraining.c.obj
+.PHONY : removeTraining.c.obj
+
+removeTraining.i: removeTraining.c.i
+.PHONY : removeTraining.i
+
+# target to preprocess a source file
+removeTraining.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\training_diary.dir\build.make CMakeFiles/training_diary.dir/removeTraining.c.i
+.PHONY : removeTraining.c.i
+
+removeTraining.s: removeTraining.c.s
+.PHONY : removeTraining.s
+
+# target to generate assembly for a file
+removeTraining.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\training_diary.dir\build.make CMakeFiles/training_diary.dir/removeTraining.c.s
+.PHONY : removeTraining.c.s
+
 systemTech.obj: systemTech.c.obj
 .PHONY : systemTech.obj
 
@@ -320,6 +344,9 @@ help:
 	@echo ... questionDataBool.obj
 	@echo ... questionDataBool.i
 	@echo ... questionDataBool.s
+	@echo ... removeTraining.obj
+	@echo ... removeTraining.i
+	@echo ... removeTraining.s
 	@echo ... systemTech.obj
 	@echo ... systemTech.i
 	@echo ... systemTech.s

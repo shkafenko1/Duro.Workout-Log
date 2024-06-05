@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/training_diary.dir/main.c.obj.d"
   "CMakeFiles/training_diary.dir/questionDataBool.c.obj"
   "CMakeFiles/training_diary.dir/questionDataBool.c.obj.d"
+  "CMakeFiles/training_diary.dir/removeTraining.c.obj"
+  "CMakeFiles/training_diary.dir/removeTraining.c.obj.d"
   "CMakeFiles/training_diary.dir/systemTech.c.obj"
   "CMakeFiles/training_diary.dir/systemTech.c.obj.d"
   "CMakeFiles/training_diary.dir/traningHooks.c.obj"

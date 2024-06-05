@@ -13,6 +13,7 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/Course App/training-diary-main/createTraning.c" "CMakeFiles/training_diary.dir/createTraning.c.obj" "gcc" "CMakeFiles/training_diary.dir/createTraning.c.obj.d"
   "D:/Course App/training-diary-main/main.c" "CMakeFiles/training_diary.dir/main.c.obj" "gcc" "CMakeFiles/training_diary.dir/main.c.obj.d"
   "D:/Course App/training-diary-main/questionDataBool.c" "CMakeFiles/training_diary.dir/questionDataBool.c.obj" "gcc" "CMakeFiles/training_diary.dir/questionDataBool.c.obj.d"
+  "D:/Course App/training-diary-main/removeTraining.c" "CMakeFiles/training_diary.dir/removeTraining.c.obj" "gcc" "CMakeFiles/training_diary.dir/removeTraining.c.obj.d"
   "D:/Course App/training-diary-main/systemTech.c" "CMakeFiles/training_diary.dir/systemTech.c.obj" "gcc" "CMakeFiles/training_diary.dir/systemTech.c.obj.d"
   "D:/Course App/training-diary-main/traningHooks.c" "CMakeFiles/training_diary.dir/traningHooks.c.obj" "gcc" "CMakeFiles/training_diary.dir/traningHooks.c.obj.d"
   )
