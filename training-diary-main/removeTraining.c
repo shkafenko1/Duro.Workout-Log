@@ -60,7 +60,7 @@
 
  }
 
- void fileEcxhange(int flag, char* date)
+ void fileEcxhange(int flag, char* date) // в функции временный файл переименовывается на иходный, а исходный удаляется
  {
      // Замена исходного файла временным
      if (flag)

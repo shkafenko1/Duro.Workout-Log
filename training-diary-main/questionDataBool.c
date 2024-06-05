@@ -15,7 +15,7 @@ void questionData(){
             createTraning(); // Функция добавления тренировок
             break;
         case CHECK:
-            reportTraining(); // Функция просмотра тренировки
+            reportTraining(); // Функция просмотра тренировок
             break;
         case REMOVE:
             removeTraining(); // Функция удаления тренировки
